@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
+    <!-- Roboto Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome CDN -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Pomodoro Clock</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Pomodoro Clock</h1>
+      <!-- Length Input Control -->
+      <div id="length-control">
+        <div id="break">
+          <h3 id="break-label">Break Length</h3>
+          <div class="input-control">
+            <button id="break-decrement">
+              <i class="fa fa-arrow-down fa-2x"></i>
+            </button>
+            <h3 id="break-length">5</h3>
+            <button id="break-increment">
+              <i class="fa fa-arrow-up fa-2x"></i>
+            </button>
+          </div>
+        </div>
+        <div id="session">
+          <h3 id="session-label">Session Length</h3>
+          <div class="input-control">
+            <button id="session-decrement">
+              <i class="fa fa-arrow-down fa-2x"></i>
+            </button>
+            <h3 id="session-length">25</h3>
+            <button id="session-increment">
+              <i class="fa fa-arrow-up fa-2x"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Session Timer -->
+      <div id="timer">
+        <h3 id="timer-label">Session</h3>
+        <h2 id="time-left">25:00</h2>
+      </div>
+      <!-- Session Play/Pause/Reset Controls -->
+      <div id="session-control">
+        <button id="start_stop">
+          <i class="fa fa-play fa-2x"></i><i class="fa fa-pause fa-2x"></i>
+        </button>
+        <button id="reset"><i class="fa fa-refresh fa-2x"></i></button>
+      </div>
+    </div>
+    <audio
+      src="http://www.peter-weinberg.com/files/1014/8073/6015/BeepSound.wav"
+      id="beep"
+    ></audio>
+    <script src="js/app.bundle.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
