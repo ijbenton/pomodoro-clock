@@ -52,6 +52,15 @@ class Timer {
       : this.intervalTimer(this.slength, this.total);
   }
 
+  convertAndDisplayTime(totalSeconds) {
+    let minutes, seconds;
+    minutes = Math.floor(totalSeconds / 60);
+    seconds = totalSeconds - minutes * 60;
+    this.timeLeft.textContent = `${minutes < 10 ? '0' + minutes : minutes}:${
+      seconds < 10 ? '0' + seconds : seconds
+    }`;
+  }
+
   intervalTimer(sessionSeconds, breakSeconds) {
     let total, minutes, seconds;
     // Display Initial Value based on timer
@@ -68,40 +77,28 @@ class Timer {
       if (total !== 0 && this.state === 'running') {
         total -= 1;
         this.total = total;
-        // Convert total seconds to minutes and seconds
-        minutes = Math.floor(total / 60);
-        seconds = total - minutes * 60;
-        this.timeLeft.textContent = `${
-          minutes < 10 ? '0' + minutes : minutes
-        }:${seconds < 10 ? '0' + seconds : seconds}`;
+        this.convertAndDisplayTime(total);
+        total === 30 ? (this.timeLeft.style.color = '#FF1654') : null;
       }
-      // If time has ran out, switch timers
+      // If time has ran out, find out which timer to switch to and display
+      // the start time for that specific timer
       else if (total === 0 && this.state === 'running') {
-        //clearInterval(timer);
         if (this.currentTimer === 'session') {
           total = breakSeconds;
-          // Convert total seconds to minutes and seconds
-          minutes = Math.floor(total / 60);
-          seconds = total - minutes * 60;
-          this.timeLeft.textContent = `${
-            minutes < 10 ? '0' + minutes : minutes
-          }:${seconds < 10 ? '0' + seconds : seconds}`;
           this.total = total;
+          this.convertAndDisplayTime(total);
+          this.timeLeft.style.color = '#f0f3bd';
           this.currentTimer = 'break';
           this.timerLabel.textContent = 'Break';
         } else {
           total = sessionSeconds;
-          // Convert total seconds to minutes and seconds
-          minutes = Math.floor(total / 60);
-          seconds = total - minutes * 60;
-          this.timeLeft.textContent = `${
-            minutes < 10 ? '0' + minutes : minutes
-          }:${seconds < 10 ? '0' + seconds : seconds}`;
+          this.total = total;
+          this.convertAndDisplayTime(total);
+          this.timeLeft.style.color = '#f0f3bd';
           this.currentTimer = 'session';
           this.timerLabel.textContent = 'Session';
-          this.total = total;
         }
-
+        // Play audio
         this.audio.play();
       }
     }, 1000);

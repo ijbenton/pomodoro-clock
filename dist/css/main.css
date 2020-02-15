@@ -1,10 +1,17 @@
+:root {
+  touch-action: manipulation; }
+
 body {
-  background: #034657;
+  background: #00a896;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-  color: #fff;
-  height: 100%;
-  width: 100vw; }
+  color: #f0f3bd;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+  body audio {
+    display: none; }
   body h1,
   body h2,
   body h3 {
@@ -15,7 +22,7 @@ body {
     background: none;
     outline: none;
     border: none;
-    color: white; }
+    color: #f0f3bd; }
   body i {
     cursor: pointer; }
   body h1 {
@@ -24,10 +31,11 @@ body {
   body h3 {
     font-size: 1.65rem; }
   body .container {
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 0 10px;
-    text-align: center; }
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem;
+    text-align: center;
+    height: 100%; }
     body .container #length-control {
       display: flex;
       justify-content: center;
@@ -41,7 +49,8 @@ body {
     body .container #timer {
       height: 170px;
       width: 250px;
-      border: 7px solid #03333f;
+      background: #028090;
+      border: 7px solid #05668d;
       border-radius: 25%;
       margin: 0 auto;
       display: flex;
@@ -51,6 +60,14 @@ body {
       body .container #timer #timer-label {
         padding-bottom: 1rem; }
       body .container #timer #time-left {
-        font-size: 3.5rem; }
+        font-size: 3.5rem;
+        font-family: 'Bitter', serif; }
     body .container #session-control {
       padding-top: 1rem; }
+  @media (max-width: 768px) {
+    body .container {
+      width: 600px; }
+      body .container #length-control {
+        flex-direction: column; }
+        body .container #length-control .input-control i {
+          padding: 0 0.25rem; } }

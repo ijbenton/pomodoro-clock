@@ -43,10 +43,13 @@ function handlePlayPauseClick(e) {
       parseInt(sessionLengthEl.textContent),
       parseInt(breakLengthEl.textContent)
     );
+    playPauseBtn.innerHTML = '<i class="fa fa-pause fa-3x"></i>';
   } else if (timer.state === 'running') {
     timer.pauseTime();
+    playPauseBtn.innerHTML = '<i class="fa fa-play fa-3x"></i>';
   } else if (timer.state === 'paused') {
     timer.resumeTime();
+    playPauseBtn.innerHTML = '<i class="fa fa-pause fa-3x"></i>';
   }
 
   e.preventDefault();
@@ -54,6 +57,7 @@ function handlePlayPauseClick(e) {
 
 function handleResetClick(e) {
   timer.resetTimer();
+  playPauseBtn.innerHTML = '<i class="fa fa-play fa-3x"></i>';
   e.preventDefault();
 }
 
