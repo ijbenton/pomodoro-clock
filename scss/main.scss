@@ -11,6 +11,10 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 
   audio {
     display: none;
@@ -48,6 +52,7 @@ body {
   .container {
     display: flex;
     flex-direction: column;
+    align-content: center;
     padding: 0 3rem;
     text-align: center;
     height: 100%;
@@ -74,9 +79,9 @@ body {
       background: #028090;
       border: 7px solid #05668d;
       border-radius: 25%;
-      margin: 0 auto;
       display: flex;
       flex-direction: column;
+      align-self: center;
       align-content: center;
       justify-content: center;
 
@@ -102,10 +107,29 @@ body {
       }
     }
   }
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 767px) {
+  body {
+    font-size: 10px;
+
     .container {
-      width: 600px;
+      width: 320px;
+      padding: 0;
+      margin: 0;
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h2,
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      #timer {
+        margin: 0;
+      }
 
       #length-control {
         flex-direction: column;
