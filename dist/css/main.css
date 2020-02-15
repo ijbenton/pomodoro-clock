@@ -78,19 +78,24 @@ body {
 
 @media (max-width: 767px) {
   body {
-    font-size: 10px; }
+    font-size: 5px; }
     body .container {
       width: 320px;
       padding: 0;
       margin: 0; }
       body .container h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         padding: 0.5rem 0; }
       body .container h2,
       body .container h3 {
-        font-size: 1.5rem; }
+        font-size: 1.2rem; }
+      body .container #length-control {
+        padding: 0; }
       body .container #timer {
-        margin: 0; }
+        height: 110px;
+        width: 170px; }
+        body .container #timer #time-left {
+          font-size: 2.5rem; }
       body .container #length-control {
         flex-direction: column; }
         body .container #length-control .input-control i {

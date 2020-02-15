@@ -111,7 +111,7 @@ body {
 
 @media (max-width: 767px) {
   body {
-    font-size: 10px;
+    font-size: 5px;
 
     .container {
       width: 320px;
@@ -119,17 +119,26 @@ body {
       margin: 0;
 
       h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         padding: 0.5rem 0;
       }
 
       h2,
       h3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+      }
+
+      #length-control {
+        padding: 0;
       }
 
       #timer {
-        margin: 0;
+        height: 110px;
+        width: 170px;
+
+        #time-left {
+          font-size: 2.5rem;
+        }
       }
 
       #length-control {
